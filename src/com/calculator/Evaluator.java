@@ -56,15 +56,17 @@ public class Evaluator implements Expression.Visitor<Double> {
             return result.apply(arg);
         }
         else {
-            if(expr.getFunction().toString().equals("sort")) {
+            if(expr.getFunction().getLexme().equals("sort") || expr.getFunction().getLexme().equals("rsort")) {
                 print = false;
             }
             ArrayList<Double> args = new ArrayList<>();
             for(Expression arg : expr.getArguments()){
                 args.add(evaluate(arg));
+//                System.out.println("me whe");
             }
 
             Function<ArrayList<Double>, Double> result = MathOps.multiParamFunctions.get(expr.getFunction().getType());
+//            System.out.println(result);
             if(result == null) throw new Error("You used a function that isn't implemented yet");
             return result.apply(args);
         }

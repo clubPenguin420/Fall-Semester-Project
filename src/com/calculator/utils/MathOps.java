@@ -1,6 +1,8 @@
 package com.calculator.utils;
 
 import com.calculator.TokenType;
+import sun.awt.image.ImageWatched;
+
 import static com.calculator.TokenType.*;
 
 import java.lang.reflect.Array;
@@ -49,7 +51,7 @@ public class MathOps {
 
         //These functions only take in the parameters it wants and if you give it more than it takes in it will ignore the extras
         multiParamFunctions.put(ROOT, (args) -> Math.pow(args.get(1), 1 / args.get(0)));
-        multiParamFunctions.put(LOG, (args) -> Math.log10(args.get(1)) / Math.log10(args.get(0)));
+        multiParamFunctions.put(LOG, (args) -> Math.log(args.get(0)) / Math.log(args.get(1)));
         multiParamFunctions.put(BINOMIALPDF, (args) -> binomialpdf(args.get(0), args.get(1), args.get(2)));
         multiParamFunctions.put(BINOMIALCDF, (args) -> binomialcdf(args.get(0), args.get(1), args.get(2)));
         multiParamFunctions.put(NORMALPDF, (args) -> normalpdf(args.get(0), args.get(1), args.get(2)));
@@ -57,6 +59,7 @@ public class MathOps {
         multiParamFunctions.put(INVNORM, (args) -> inverseNorm(args.get(0), args.get(1), args.get(2)));
         multiParamFunctions.put(BASE, (args) -> base_conversion(args.get(0), args.get(1), args.get(2)));
         multiParamFunctions.put(SORT, MathOps::sort);
+        multiParamFunctions.put(RSORT, MathOps::rsort);
     }
 
     /*
@@ -84,32 +87,56 @@ public class MathOps {
 
     public static double sort(ArrayList<Double> e) {
         Stack<Double> elements = new Stack<>();
-        Iterator<Double> ei = e.iterator();
-        for (Iterator<Double> it = ei; it.hasNext(); ) {
-            elements.push(it.next());
-        }
         Stack<Double> tmpStack = new Stack<>();
-        while(!e.isEmpty())
-        {
-            // pop out the first element
-            Double tmp = elements.pop();
+        Iterator<Double> ei = e.iterator();
+        while (ei.hasNext()) {
+            elements.push(ei.next());
+        }
+//        System.out.println(elements);
 
-            // while temporary stack is not empty and
-            // top of stack is greater than temp
-            while(!tmpStack.isEmpty() && tmpStack.peek()
-                    > tmp)
-            {
-                // pop from temporary stack and
-                // push it to the input stack
-                elements.push(tmpStack.pop());
+        double element = 0.0;
+        while(!elements.isEmpty()) {
+            if (elements.peek() <= (element = elements.pop())) {
+                if (tmpStack.isEmpty()) {
+                    tmpStack.push(element);
+                } else {
+                    while((!tmpStack.isEmpty()) && tmpStack.peek() > element) {
+                        elements.push(tmpStack.pop());
+                    }
+                    tmpStack.push(element);
+                }
             }
-
-            // push temp in temporary of stack
-            tmpStack.push(tmp);
         }
 
         System.out.println(tmpStack);
-        return 0;
+        return 0.0;
+    }
+
+    public static double rsort(ArrayList<Double> e) {
+        Stack<Double> elements = new Stack<>();
+        Stack<Double> tmpStack = new Stack<>();
+        Iterator<Double> ei = e.iterator();
+        while (ei.hasNext()) {
+            elements.push(ei.next());
+        }
+//        System.out.println(elements);
+
+        double element = 0.0;
+        while(!elements.isEmpty()) {
+            if (elements.peek() >= (element = elements.pop())) {
+                if (tmpStack.isEmpty()) {
+                    tmpStack.push(element);
+                } else {
+                    while((!tmpStack.isEmpty()) && tmpStack.peek() < element) {
+                        elements.push(tmpStack.pop());
+                    }
+                    tmpStack.push(element);
+                }
+            }
+        }
+
+        System.out.println(tmpStack);
+        return 0.0;
     }
 
     private static double binomialpdf(double trials, double x_value, double prob_of_success) {

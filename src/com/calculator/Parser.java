@@ -92,7 +92,7 @@ public class Parser {
     private Expression function() throws IOException {
         ArrayList<TokenType> spFuncs = new ArrayList<>(Arrays.asList(SQRT, LN, SIN, SINH, COS, COSH, TAN, TANH, CSC, CSCH, SEC, SECH, COT, COTH, ARCSIN, ARCSINH, ARCCOS, ARCCOSH, ARCTAN, ARCTANH,
                 ARCCSC, ARCCSCH, ARCSEC, ARCSECH, ARCCOT, ARCCOTH, VER, VCS, CVS, CVC, SEM, HVC, HCV, HCC, EXS, EXC, CRD));
-        ArrayList<TokenType> mpFuncs = new ArrayList<>(Arrays.asList(ROOT, LOG, NORMALPDF, NORMALCDF, BINOMIALPDF, BINOMIALCDF, INVNORM, SORT, BASE, UNION, DIFF));
+        ArrayList<TokenType> mpFuncs = new ArrayList<>(Arrays.asList(ROOT, LOG, NORMALPDF, NORMALCDF, BINOMIALPDF, BINOMIALCDF, INVNORM, SORT, RSORT, BASE, UNION, DIFF));
         if(match(spFuncs)) {
             Token function = previous();
             consume(LEFT_PAREN);
@@ -111,6 +111,7 @@ public class Parser {
             consume(RIGHT_PAREN);
             return new Expression.Function(function, args);
         }
+//        else if(match())
 //        else if(match(SORT)) {
 //            Token function = previous();
 //            consume(LEFT_PAREN);

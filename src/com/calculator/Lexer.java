@@ -57,6 +57,7 @@ public class Lexer {
         functions.put("binomialcdf", BINOMIALCDF);
         functions.put("invnorm", INVNORM);
         functions.put("sort", SORT);
+        functions.put("rsort", RSORT);
         functions.put("base", BASE);
         functions.put("union", UNION);
         functions.put("diff", DIFF);
@@ -85,6 +86,8 @@ public class Lexer {
             case '(': addToken(LEFT_PAREN); break;
             case ')': addToken(RIGHT_PAREN); break;
             case '|': addToken(ABS_BRACK); break;
+            case '{': addToken(LEFT_CB);
+            case '}': addToken(RIGHT_CB);
             case '-': addToken(MINUS); break;
             case '+': addToken(PLUS); break;
             case '*': addToken(STAR); break;

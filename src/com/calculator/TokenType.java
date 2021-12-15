@@ -2,7 +2,7 @@ package com.calculator;
 
 public enum TokenType {
     // Groupings
-    LEFT_PAREN, RIGHT_PAREN, ABS_BRACK,
+    LEFT_PAREN, RIGHT_PAREN, ABS_BRACK, LEFT_CB, RIGHT_CB,
     // Arithmetic Operators
     MINUS, PLUS, SLASH, STAR, MODULO, EXP, FACTORIAL,
 
@@ -19,7 +19,7 @@ public enum TokenType {
     VER, VCS, CVS, CVC, SEM, HVC, HCV, HCC, EXS, EXC, CRD,
     NORMALPDF, NORMALCDF, BINOMIALPDF, BINOMIALCDF, INVNORM,
 
-    SORT, BASE, UNION, DIFF,
+    SORT, RSORT, BASE, UNION, DIFF,
 
     IMPORT, REMOVE
 }
