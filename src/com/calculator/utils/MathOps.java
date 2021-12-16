@@ -1,11 +1,9 @@
 package com.calculator.utils;
 
 import com.calculator.TokenType;
-import sun.awt.image.ImageWatched;
 
 import static com.calculator.TokenType.*;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Function;
 
