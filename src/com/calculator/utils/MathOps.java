@@ -11,6 +11,7 @@ import java.util.function.Function;
 
 public class MathOps {
 
+    //Maps used
     public static Map<TokenType, Function<Double, Double>> singleParamFunctions = new HashMap<>();
     public static Map<TokenType, Function<ArrayList<Double>, Double>> multiParamFunctions = new HashMap<>();
     private final static double RECTANGLES = 100000000;
