@@ -9,6 +9,7 @@ need regarding the calculator and it\'s uses.
 # Glossary
 
 ## Operators:
+
 | Name | Symbol | Usage  |
 | ------------ | ------------ | ------------ |
 |Addition     |       +      |`[expression] + [expression]`|
@@ -21,6 +22,7 @@ need regarding the calculator and it\'s uses.
 |Factorial    |       !      |       `[expression]!`       |
 
 ## Grouping:
+
 | Name | Symbols | Usage  |
 | ------------ | ------------ | ------------ |
 |Parentheses   |      ()      |`([expression])`|
