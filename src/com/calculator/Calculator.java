@@ -32,6 +32,7 @@ public class Calculator {
             try{
 //                System.out.println(line);
                 lexer = new Lexer(line);
+                //Linked List Used
                 LinkedList<Token> tokens = lexer.scanTokens();
 
 //                System.out.println(tokens);

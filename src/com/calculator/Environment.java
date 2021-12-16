@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Environment {
-    public Map<String, Double> variables = new HashMap<>();
+    public Map<String, Double> variables = new HashMap<>();              //Maps used
     private double previous_result;
 
 

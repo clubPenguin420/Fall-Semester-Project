@@ -91,6 +91,7 @@ public class Parser {
     * func_name is all the functions valid, I can't be bothered to write all of them down
     */
     private Expression function() throws IOException {
+        //Sets used
         HashSet<TokenType> spFuncs = new HashSet<>(Arrays.asList(SQRT, LN, SIN, SINH, COS, COSH, TAN, TANH, CSC, CSCH, SEC, SECH, COT, COTH, ARCSIN, ARCSINH, ARCCOS, ARCCOSH, ARCTAN, ARCTANH,
                 ARCCSC, ARCCSCH, ARCSEC, ARCSECH, ARCCOT, ARCCOTH, VER, VCS, CVS, CVC, SEM, HVC, HCV, HCC, EXS, EXC, CRD));
         HashSet<TokenType> mpFuncs = new HashSet<>(Arrays.asList(ROOT, LOG, NORMALPDF, NORMALCDF, BINOMIALPDF, BINOMIALCDF, INVNORM, SORT, RSORT, BASE));

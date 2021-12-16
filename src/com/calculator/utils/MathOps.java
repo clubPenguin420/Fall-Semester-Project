@@ -80,21 +80,21 @@ public class MathOps {
         }
     }
 
+    //Base conversion used
     public static double base_conversion(double og_num, double og_base, double new_base) {
         int og_b10 = Integer.parseInt(String.valueOf((int)og_num), (int)og_base);
         return Double.parseDouble(Integer.toString(og_b10, (int)new_base));
     }
 
-    private static double sort(ArrayList<Double> e) {
-        Stack<Double> elements = new Stack<>();
+    private static double sort(ArrayList<Double> e) {           //Sorting Algo
+        Stack<Double> elements = new Stack<>();    //Stacks used
         Stack<Double> tmpStack = new Stack<>();
-        Iterator<Double> ei = e.iterator();
+        Iterator<Double> ei = e.iterator();                       //Iterator is used
         while (ei.hasNext()) {
             elements.push(ei.next());
         }
-//        System.out.println(elements);
 
-        double element = 0.0;
+        double element;
         while(!elements.isEmpty()) {
             if (elements.peek() <= (element = elements.pop())) {
                 if (tmpStack.isEmpty()) {
@@ -112,16 +112,15 @@ public class MathOps {
         return 0.0;
     }
 
-    private static double rsort(ArrayList<Double> e) {
-        Stack<Double> elements = new Stack<>();
+    private static double rsort(ArrayList<Double> e) {       //Sorting Algo
+        Stack<Double> elements = new Stack<>();     //Stacks used
         Stack<Double> tmpStack = new Stack<>();
         Iterator<Double> ei = e.iterator();
-        while (ei.hasNext()) {
+        while (ei.hasNext()) {                                  //Iterator
             elements.push(ei.next());
         }
-//        System.out.println(elements);
 
-        double element = 0.0;
+        double element;
         while(!elements.isEmpty()) {
             if (elements.peek() >= (element = elements.pop())) {
                 if (tmpStack.isEmpty()) {
@@ -183,9 +182,4 @@ public class MathOps {
         double z_score = y * (((a[3] * r + a[2]) * r + a[1]) * r + a[0]) / ((((b[3] * r + b[2]) * r + b[1]) * r + b[0]) * r + 1);
         return z_score * std + mean;
     }
-
-
-    //    public static double getZAtHeight(double mean, double std, double height) {
-//        return Math.sqrt(-2.0 * Math.log(height * (std * Math.sqrt(2.0 * Math.PI)))) * std + mean;
-//    }
 }
