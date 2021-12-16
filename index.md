@@ -26,7 +26,7 @@ need regarding the calculator and it\'s uses.
 | Name | Symbols | Usage  |
 | ------------ | ------------ | ------------ |
 |Parentheses   |      ()      |`([expression])`|
-|Absolute Value|      \|\|    |`\|[expression]\|`|
+|Absolute Value|      \|\|    |`|[expression]|`|
 
 ## Functions:
 - Square Root: Returns the square root of a number
