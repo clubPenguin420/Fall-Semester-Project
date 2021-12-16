@@ -59,8 +59,18 @@ need regarding the calculator and it\'s uses.
   - Usage: `arccos(radians)`
 - Arctan: returns the inverse tangent of the value(radians)
   - Usage: `arctan(radians)`
-
-
+- Csc, Sec, Cot, Arccsc, Arcsec, Arccot, Sinh, Cosh, Tanh, Arcsinh, Arccosh, Arctanh, Csch, Sech, Coth, Arccsch, Arcsech, and Arccoth are used the same as the above trig functions
+- Normal Probability Distribution Function: returns the probabilty from a normal distribution given the z_value, along with the mean and standard deviation
+  - Usage: `normalpdf(mean, std, z_value)`
+- Normal Cumulative Distribution Function: returns the total probabilty from a normal distribution given the 2 bounds, along with the mean and standard deviation
+  - Usage: `normalcdf(mean, std, lower_bound, upper_bound)`
+- Binomial Probability Distribution Function: returns the probabilty from a binomial distribution given total # of trials, # of successes, and probability of success
+  - Usage: `binomialpdf(Total_trials, success_trials, prob_of_success)`
+- Binomial Cumulative Distribution Function: returns the probabilty from a binomial distribution of given # of successes and less given total # of trials, # of sucesses, and probability of success
+  - Usage: `binomialpdf(Total_trials, success_trials, prob_of_success)`
+- Inverse Normal Distribution: Get the corrosponding z value given the probability, mean, and standard deviation
+  - Usage: `invnorm(mean, std, prob)`
+ 
 
 ------------
 
