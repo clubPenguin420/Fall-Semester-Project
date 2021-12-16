@@ -1,6 +1,8 @@
 package com.calculator;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 public abstract class Expression {
     interface Visitor<T> {
@@ -92,6 +94,7 @@ public abstract class Expression {
         final Token function;
         private Expression argument;
         private ArrayList<Expression> arguments;
+        private ArrayList<HashSet<Expression>> sets;
         boolean argOrArgs; // true = arg, false = args
 
         public Function(Token function, Expression argument) {
@@ -105,11 +108,17 @@ public abstract class Expression {
             this.arguments = argument;
             argOrArgs = false;
         }
+        public Function(Token function, ArrayList<HashSet<Expression>> sets, double yeet) {
+            this.function = function;
+            this.sets = sets;
+            argOrArgs = false;
+        }
 
         public boolean getState() { return argOrArgs; }
         public Token getFunction() { return this.function;}
         public Expression getArgument() {return this.argument;}
         public ArrayList<Expression> getArguments() {return this.arguments;}
+        public ArrayList<HashSet<Expression>> getSets() { return this.sets; }
 
         @Override
         <T> T accept(Visitor<T> visitor) { return visitor.visitFunctionNode(this); }

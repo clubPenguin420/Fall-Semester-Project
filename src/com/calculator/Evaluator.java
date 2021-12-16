@@ -3,6 +3,8 @@ package com.calculator;
 import com.calculator.utils.MathOps;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -49,6 +51,7 @@ public class Evaluator implements Expression.Visitor<Double> {
 
     @Override
     public Double visitFunctionNode(Expression.Function expr) {
+        ArrayList<String> exceptions = new ArrayList<>(Arrays.asList("sort", "rsort"));
         if(expr.getState()) {
             double arg = evaluate(expr.getArgument());
             Function<Double, Double> result = MathOps.singleParamFunctions.get(expr.getFunction().getType());
@@ -56,7 +59,7 @@ public class Evaluator implements Expression.Visitor<Double> {
             return result.apply(arg);
         }
         else {
-            if(expr.getFunction().getLexme().equals("sort") || expr.getFunction().getLexme().equals("rsort")) {
+            if(exceptions.contains(expr.getFunction().getLexme())) {
                 print = false;
             }
             ArrayList<Double> args = new ArrayList<>();

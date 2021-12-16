@@ -85,7 +85,7 @@ public class MathOps {
         return Double.parseDouble(Integer.toString(og_b10, (int)new_base));
     }
 
-    public static double sort(ArrayList<Double> e) {
+    private static double sort(ArrayList<Double> e) {
         Stack<Double> elements = new Stack<>();
         Stack<Double> tmpStack = new Stack<>();
         Iterator<Double> ei = e.iterator();
@@ -112,7 +112,7 @@ public class MathOps {
         return 0.0;
     }
 
-    public static double rsort(ArrayList<Double> e) {
+    private static double rsort(ArrayList<Double> e) {
         Stack<Double> elements = new Stack<>();
         Stack<Double> tmpStack = new Stack<>();
         Iterator<Double> ei = e.iterator();
