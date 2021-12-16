@@ -27,6 +27,7 @@ need regarding the calculator and it\'s uses.
 | ------------ | ------------ | ------------ |
 |Parentheses   |      ()      |`([expression])`|
 |Absolute Value|      \|\|    |`\|[expression]\|`|
+*When using Absolute Value, don't add the backslashes. This is an rendering error on the website* 
 
 ## Functions:
 - Square Root: Returns the square root of a number
