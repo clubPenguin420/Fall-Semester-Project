@@ -12,7 +12,7 @@ public class Calculator {
     public static void main(String[] args) throws IOException {
 //        Scanner user = new Scanner(System.in);
         System.out.println("--------------- CALCULATOR --------------\n|           By: clubPenguin420          |\n-----------------------------------------");
-
+        System.out.println("Go to http://clubpenguin420.me/Fall-Semester-Project/ if you need help using this calculator");
         runREPL();
     }
 
